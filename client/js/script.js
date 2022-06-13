@@ -1,0 +1,11 @@
+/* 
+users[
+    post[
+        commenti
+    ]
+    album[
+        photos
+    ]
+    todos
+]
+ */
