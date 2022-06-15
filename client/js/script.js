@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const section = document.querySelector('.section');
 
 //#region  ---------- Generazione Cards all'avvio ------------
@@ -95,7 +94,6 @@ fetch('https://jsonplaceholder.typicode.com/users')
 })
 
 //#endregion
-=======
 /* 
 users[
     post[
@@ -107,4 +105,3 @@ users[
     todos
 ]
  */
->>>>>>> b08ac26792962ea1e6fe9513838a1edaeb01aa5a
