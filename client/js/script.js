@@ -4,13 +4,8 @@ const section = document.querySelector('.section');
 
 fetch('http://localhost:3000/users')
 .then(res => res.json())    // json parse per trasformare i dati dal json
-<<<<<<< HEAD
-.then(function(data) {      // data contiene i dati fetchati dall'url o json file
-    data.forEach((ele) => { // ele riporta tutti gli array presenti nella source. Per ognuno, crea div e lo popola con i dettagli (primo array, poi secondo)
-=======
 .then(function(data) {      // data contiene i dati fetchati dal json
     data.forEach((ele , index) => { // ele riporta tutti gli array presenti nella source. Per ognuno, crea div e lo popola con i dettagli (primo array, poi secondo)
->>>>>>> 0bda5771d0d1e870f9f258fb9860fdf76cb5fa0d
 
         /* card{
             div.users{
