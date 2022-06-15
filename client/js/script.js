@@ -94,34 +94,48 @@ fetch('http://localhost:3000/users')
             fetch('http://localhost:3000/users/'+num_post+'/posts')
             .then(res => res.json())    // json parse per trasformare i dati dal json
             .then(function(post) {
-            let postsDiv = document.createElement('div');
-            postsDiv.className = 'postsDiv';
-            post.forEach((ele1 , ele1_index)=>{
-                let titolo = document.createElement('h2')
-                titolo.innerText = ele1.title
-                postsDiv.appendChild(titolo)
-                let testo_post = document.createElement('p')
-                testo_post.innerText = ele1.body
-                postsDiv.appendChild(testo_post)
-                let div_commenti = document.createElement('div')
-                fetch('http://localhost:3000/posts/'+(ele1_index+1)+'/comments')
-                .then(res => res.json())    // json parse per trasformare i dati dal json
-                .then(function(commenti) {
-                    commenti.forEach((commento)=>{
-                        console.log(div_commenti)
-                        let titolo_commenti = document.createElement('h3')
-                        titolo_commenti.innerText = commento.email
-                        div_commenti.appendChild(titolo)
-                        let testo_commenti = document.createElement('p')
-                        testo_commenti.innerText = commento.body
-                        div_commenti.appendChild(testo_post)
+                let postsDiv = document.createElement('div');
+                postsDiv.className = 'postsDiv';
+                post.forEach((ele1 , ele1_index)=>{
+                    let titolo = document.createElement('h2')
+                    titolo.innerText = ele1.title
+                    postsDiv.appendChild(titolo)
+                    let testo_post = document.createElement('p')
+                    testo_post.innerText = ele1.body
+                    postsDiv.appendChild(testo_post)
+                    let btnComments = document.createElement('div');
+                    btnComments.innerHTML = '<button class="btn btn-dark" type="button">comments</button>' 
+                    postsDiv.appendChild(btnComments)
+                    let div_commenti = document.createElement('div')
+                    div_commenti.className = 'div_commenti'
+                    postsDiv.appendChild(div_commenti)
+                    btnComments.addEventListener('click',()=>{
+                        div_commenti.innerHTML = ''
+                        if (document.getElementsByClassName('postsDiv')[index].getElementsByClassName('div_commenti')[ele1_index].classList.contains('show')){
+                            document.getElementsByClassName('postsDiv')[index].getElementsByClassName('div_commenti')[ele1_index].classList.add('no-show')
+                            document.getElementsByClassName('postsDiv')[index].getElementsByClassName('div_commenti')[ele1_index].classList.remove('show')
+                        }else{
+                            document.getElementsByClassName('postsDiv')[index].getElementsByClassName('div_commenti')[ele1_index].classList.add('show') 
+                            document.getElementsByClassName('postsDiv')[index].getElementsByClassName('div_commenti')[ele1_index].classList.remove('no-show')
+                        }
+                        fetch('http://localhost:3000/posts/'+(ele1_index+1+index)+'/comments')
+                        .then(res => res.json())    // json parse per trasformare i dati dal json
+                        .then(function(commenti) {
+                            commenti.forEach((commento)=>{
+                                let titolo_commenti = document.createElement('h3')
+                                titolo_commenti.innerText = commento.email
+                                div_commenti.appendChild(titolo_commenti)
+                                let testo_commenti = document.createElement('p')
+                                testo_commenti.innerText = commento.body
+                                div_commenti.appendChild(testo_commenti)
+                            })
+
+                        })
                     })
 
+                    displayDiv.appendChild(postsDiv);
+                    
                 })
-                displayDiv.appendChild(div_commenti)
-            })
-            section.appendChild(postsDiv);
-            displayDiv.appendChild(postsDiv);
             })     // data contiene i dati fetchati dal json
         })
         btnDiv.appendChild(btnPosts);
