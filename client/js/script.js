@@ -4,7 +4,7 @@ const section = document.querySelector('.section');
 
 fetch('https://jsonplaceholder.typicode.com/users')
 .then(res => res.json())    // json parse per trasformare i dati dal json
-.then(function(data) {      // data contiene i dati fetchati dal json
+.then(function(data) {      // data contiene i dati fetchati dall'url o json file
     data.forEach((ele) => { // ele riporta tutti gli array presenti nella source. Per ognuno, crea div e lo popola con i dettagli (primo array, poi secondo)
 
         /* --------- Contenitore Card ---------- */
