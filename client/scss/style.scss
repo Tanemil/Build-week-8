@@ -1,2 +1,9 @@
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
+.no-show{
+    display: none;
+}
+
+.show{
+    display: initial;
+}

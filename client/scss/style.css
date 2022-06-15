@@ -11956,4 +11956,12 @@ fieldset:disabled .btn {
     display: none !important;
   }
 }
+
+.no-show {
+  display: none;
+}
+
+.show {
+  display: initial;
+}
 /*# sourceMappingURL=style.css.map */
