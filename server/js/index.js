@@ -42164,8 +42164,8 @@ app.get('/users/:id/posts', (request, response) => {
     response.json(result);
 })
 
-// POST
-app.post('/api/users',(request, response) => {
+// POST users
+app.post('/users',(request, response) => {
     const obj = request.body;
     console.log(obj)
     obj.id = count++;
@@ -42173,8 +42173,53 @@ app.post('/api/users',(request, response) => {
     response.json('Utente Aggiunto nel DB');
 })
 
-// PUT
-app.put('/api/users/:id', (request, response) => {
+// POST posts
+app.post('/posts',(request, response) => {
+  const obj = request.body;
+  console.log(obj)
+  obj.id = count++;
+  posts.push(obj);
+  response.json('Utente Aggiunto nel DB');
+})
+
+// POST comments
+app.post('/comments',(request, response) => {
+  const obj = request.body;
+  console.log(obj)
+  obj.id = count++;
+  comments.push(obj);
+  response.json('Utente Aggiunto nel DB');
+})
+
+// POST albums
+app.post('/albums',(request, response) => {
+  const obj = request.body;
+  console.log(obj)
+  obj.id = count++;
+  albums.push(obj);
+  response.json('Utente Aggiunto nel DB');
+})
+
+// POST photos
+app.post('/photos',(request, response) => {
+  const obj = request.body;
+  console.log(obj)
+  obj.id = count++;
+  photos.push(obj);
+  response.json('Utente Aggiunto nel DB');
+})
+
+// POST todos
+app.post('/todos',(request, response) => {
+  const obj = request.body;
+  console.log(obj)
+  obj.id = count++;
+  todos.push(obj);
+  response.json('Utente Aggiunto nel DB');
+})
+
+// PUT users
+app.put('/users/:id', (request, response) => {
     const id = request.params.id;
     const obj_mod = request.body;
     let index = users.findIndex(ele => ele.id === +id);
@@ -42182,11 +42227,91 @@ app.put('/api/users/:id', (request, response) => {
     response.send('Utente Modificato nel DB');
 })
 
-// DELETE
-app.delete('/api/users/:id', (request, response) => {
+// PUT posts
+app.put('/posts/:id', (request, response) => {
+  const id = request.params.id;
+  const obj_mod = request.body;
+  let index = posts.findIndex(ele => ele.id === +id);
+  posts.splice(index, 1, obj_mod);
+  response.send('Utente Modificato nel DB');
+})
+
+// PUT comments
+app.put('/comments/:id', (request, response) => {
+  const id = request.params.id;
+  const obj_mod = request.body;
+  let index = comments.findIndex(ele => ele.id === +id);
+  comments.splice(index, 1, obj_mod);
+  response.send('Utente Modificato nel DB');
+})
+
+// PUT albums
+app.put('/albums/:id', (request, response) => {
+  const id = request.params.id;
+  const obj_mod = request.body;
+  let index = albums.findIndex(ele => ele.id === +id);
+  albums.splice(index, 1, obj_mod);
+  response.send('Utente Modificato nel DB');
+})
+
+// PUT photos
+app.put('/users/:id', (request, response) => {
+  const id = request.params.id;
+  const obj_mod = request.body;
+  let index = photos.findIndex(ele => ele.id === +id);
+  photos.splice(index, 1, obj_mod);
+  response.send('Utente Modificato nel DB');
+})
+
+// PUT todos
+app.put('/users/:id', (request, response) => {
+  const id = request.params.id;
+  const obj_mod = request.body;
+  let index = todos.findIndex(ele => ele.id === +id);
+  todos.splice(index, 1, obj_mod);
+  response.send('Utente Modificato nel DB');
+})
+
+// DELETE users
+app.delete('/users/:id', (request, response) => {
     const id = request.params.id;
     users = users.filter(ele => ele.id !== +id);
     response.send('Utente Eliminato dal DB');
+})
+
+// DELETE posts
+app.delete('/posts/:id', (request, response) => {
+  const id = request.params.id;
+  posts = posts.filter(ele => ele.id !== +id);
+  response.send('Utente Eliminato dal DB');
+})
+
+// DELETE albums
+app.delete('/albums/:id', (request, response) => {
+  const id = request.params.id;
+  albums = albums.filter(ele => ele.id !== +id);
+  response.send('Utente Eliminato dal DB');
+})
+
+// DELETE photos
+app.delete('/photos/:id', (request, response) => {
+  const id = request.params.id;
+  photos = photos.filter(ele => ele.id !== +id);
+  response.send('Utente Eliminato dal DB');
+})
+
+// DELETE comments
+app.delete('/comments/:id', (request, response) => {
+  const id = request.params.id;
+  comments = comments.filter(ele => ele.id !== +id);
+  response.send('Utente Eliminato dal DB');
+})
+
+// DELETE todos
+app.delete('/todos/:id', (request, response) => {
+  const id = request.params.id;
+  todos = todos.filter(ele => ele.id !== +id);
+  response.send('Utente Eliminato dal DB');
 })
 
 app.listen(port, () => console.log('Server attivo sulla porta 3000'));
