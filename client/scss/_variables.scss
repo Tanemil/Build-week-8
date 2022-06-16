@@ -47,9 +47,8 @@
         .btnDiv button {
             margin-right: 10px;
         }
-
-        .displayDiv {
-
+        .btnComments {
+            margin-bottom: 15px;
         }
         .displayDiv p br {
             display: none;
@@ -63,9 +62,11 @@
         .postsDiv h2 {
             text-align: center;
             font-size: 1.5em;
+            margin-bottom: 10px;
         }
         .postsDiv p {
             text-align: left;
+            margin-bottom: 10px;
         }
 
         input[id=switch] {

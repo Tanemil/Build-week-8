@@ -12001,6 +12001,10 @@ body .btnDiv button {
   margin-right: 10px;
 }
 
+body .btnComments {
+  margin-bottom: 15px;
+}
+
 body .displayDiv p br {
   display: none;
 }
@@ -12020,10 +12024,12 @@ body .postsDiv {
 body .postsDiv h2, body .postsDiv .h2 {
   text-align: center;
   font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
 body .postsDiv p {
   text-align: left;
+  margin-bottom: 10px;
 }
 
 body input[id=switch] {
@@ -12151,6 +12157,10 @@ html[select-theme='light'] body .btnDiv button {
   margin-right: 10px;
 }
 
+html[select-theme='light'] body .btnComments {
+  margin-bottom: 15px;
+}
+
 html[select-theme='light'] body .displayDiv p br {
   display: none;
 }
@@ -12170,10 +12180,12 @@ html[select-theme='light'] body .postsDiv {
 html[select-theme='light'] body .postsDiv h2, html[select-theme='light'] body .postsDiv .h2 {
   text-align: center;
   font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
 html[select-theme='light'] body .postsDiv p {
   text-align: left;
+  margin-bottom: 10px;
 }
 
 html[select-theme='light'] body input[id=switch] {

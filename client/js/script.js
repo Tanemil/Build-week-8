@@ -87,7 +87,7 @@ fetch('http://localhost:3000/users')
         /* -------------- Posts div ---------------- */
 
         let btnPosts = document.createElement('div');
-        btnPosts.className = 'd-inline'
+        btnPosts.className = 'd-inline';
         btnPosts.innerHTML = '<button class="btn btn-dark" type="button">posts</button>' 
         btnPosts.addEventListener('click',()=>{
             displayDiv.innerHTML = ''
@@ -113,6 +113,7 @@ fetch('http://localhost:3000/users')
                     postsDiv.appendChild(testo_post)
                     let btnComments = document.createElement('div');
                     btnComments.innerHTML = '<button class="btn btn-dark" type="button">comments</button>' 
+                    btnComments.className = 'btnComments';
                     postsDiv.appendChild(btnComments)
                     let div_commenti = document.createElement('div')
                     div_commenti.className = 'div_commenti'
