@@ -51,8 +51,8 @@ fetch('http://localhost:3000/users')
 
         let usersDiv = document.createElement('div');
         usersDiv.className = 'usersDiv';
-        usersDiv.innerHTML = `${'<span id="user_name">'+ele.name+'</span>'}${'<span>'+ele.email+'</span>'}${'<span>'+ele.phone+'</span>'}
-                              ${'<span>'+ele.website+'</span>'}${'<span>'+ele.address.street+'</span>'}${'<span>'+ele.address.city+'</span>'}`
+        usersDiv.innerHTML = `${'<span id="user_name">'+ele.name+'</span>'}${'<span>'+'email: '+ele.email+'</span>'}${'<span>'+'phone: '+ele.phone+'</span>'}
+                              ${'<span>'+'website: '+ele.website+'</span>'}${'<span>'+'street: '+ele.address.street+'</span>'}${'<span>'+'city: '+ele.address.city+'</span>'}`
         section.appendChild(usersDiv);
 
         /* -------------- Buttons div ---------------- */
@@ -168,11 +168,10 @@ fetch('http://localhost:3000/users')
                 todos.forEach((ele_todos, todos_index)=>{
                     let div_todos = document.createElement('div')
                     let todos_title = document.createElement('h3')
-                    todos_title.className = 'd-inline'
+                    div_todos.className = 'd-flex justify-content-between align-items-center'
                     let checkbox = document.createElement('input')
                     checkbox.type = 'checkbox'
                     checkbox.checked = ele_todos.completed
-                    checkbox.className = 'd-inline'
                     checkbox.addEventListener('change',()=>{
                         if (checkbox.checked){
                             fetch('http://localhost:3000/todos/'+(todos_index+1), {
