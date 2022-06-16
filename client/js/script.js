@@ -2,9 +2,9 @@ const section = document.querySelector('.section');
 
 //#region 
 
-var checkbox = document.querySelector('input[name=theme]');
+var btnCheckbox = document.querySelector('input[name=theme]');
 
-checkbox.addEventListener('change', function() {
+btnCheckbox.addEventListener('change', function() {
    if(this.checked) {
       document.documentElement.setAttribute('select-theme', 'dark');
    } else {
