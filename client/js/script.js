@@ -50,11 +50,14 @@ function genera_cards(){
             
             /* -------------- Users div ---------------- */
 
+
             let usersDiv = document.createElement('div');
             usersDiv.className = 'usersDiv';
-            usersDiv.innerHTML = `${'<span id="user_name">'+ele.name+'</span>'}${'<span>'+'email: '+ele.email+'</span>'}${'<span>'+'phone: '+ele.phone+'</span>'}
-                                ${'<span>'+'website: '+ele.website+'</span>'}${'<span>'+'street: '+ele.address.street+'</span>'}${'<span>'+'city: '+ele.address.city+'</span>'}`
+            usersDiv.innerHTML = `${'<span id="user_name">'+ele.name+'</span>'}${'<span>'+'<b>email: </b>'+ele.email+'</span>'}
+                                ${'<span>'+'<b>phone: </b>'+ele.phone+'</span>'}${'<span>'+'<b>website: </b>'+ele.website+'</span>'}
+                                ${'<span>'+'<b>street: </b>'+ele.address.street+'</span>'}${'<span>'+'<b>city: </b>'+ele.address.city+'</span>'}`
             section.appendChild(usersDiv);
+
 
             /* -------------- Buttons div ---------------- */
 
@@ -138,7 +141,6 @@ function genera_cards(){
                                     testo_commenti.innerText = commento.body
                                     div_commenti.appendChild(testo_commenti)
                                 })
-
                             })
                         })
 

@@ -11976,13 +11976,15 @@ body .usersDiv {
 }
 
 body .usersDiv > span {
-  font-size: 0.8em;
+  font-size: 0.7em;
   margin-right: 5px;
+  color: #9a9a9a;
 }
 
 body span#user_name {
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: bold;
+  color: #000;
 }
 
 body .imgDiv {
@@ -11999,6 +12001,10 @@ body .btnDiv {
 
 body .btnDiv button {
   margin-right: 10px;
+}
+
+body .btnComments {
+  margin-bottom: 15px;
 }
 
 body .displayDiv p br {
@@ -12020,10 +12026,12 @@ body .postsDiv {
 body .postsDiv h2, body .postsDiv .h2 {
   text-align: center;
   font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
 body .postsDiv p {
   text-align: left;
+  margin-bottom: 10px;
 }
 
 body input[id=switch] {
@@ -12078,7 +12086,7 @@ body .button h6, body .button .h6 {
 }
 
 .container {
-  width: 50%;
+  width: 60%;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
   margin-right: auto;
@@ -12126,13 +12134,15 @@ html[select-theme='light'] body .usersDiv {
 }
 
 html[select-theme='light'] body .usersDiv > span {
-  font-size: 0.8em;
+  font-size: 0.7em;
   margin-right: 5px;
+  color: #9a9a9a;
 }
 
 html[select-theme='light'] body span#user_name {
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: bold;
+  color: #000;
 }
 
 html[select-theme='light'] body .imgDiv {
@@ -12149,6 +12159,10 @@ html[select-theme='light'] body .btnDiv {
 
 html[select-theme='light'] body .btnDiv button {
   margin-right: 10px;
+}
+
+html[select-theme='light'] body .btnComments {
+  margin-bottom: 15px;
 }
 
 html[select-theme='light'] body .displayDiv p br {
@@ -12170,10 +12184,12 @@ html[select-theme='light'] body .postsDiv {
 html[select-theme='light'] body .postsDiv h2, html[select-theme='light'] body .postsDiv .h2 {
   text-align: center;
   font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
 html[select-theme='light'] body .postsDiv p {
   text-align: left;
+  margin-bottom: 10px;
 }
 
 html[select-theme='light'] body input[id=switch] {
