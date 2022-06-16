@@ -41072,8 +41072,6 @@ let users = [
     }
 ]
 
-console.log(users[0].image,users[1].image)
-
 // GET POSTS
 app.get('/posts', (request, response) => {
     response.json(posts);
@@ -41134,6 +41132,18 @@ app.get('/albums/:id', (request, response) => {
     })
 })
 
+// GET albums by id in users
+app.get('/users/:id/albums', (request, response) => {
+  const id = request.params.id;
+  let result = []
+  albums.forEach(ele => {
+      if(ele.userId === +id) {
+          result.push(ele);
+      }
+  })
+  response.json(result);
+})
+
 // GET photos by id in albums
 app.get('/albums/:id/photos', (request, response) => {
     const id = request.params.id;
@@ -41160,6 +41170,18 @@ app.get('/photos/:id', (request, response) => {
             return;
         }
     })
+})
+
+// GET photos by id in albums
+app.get('/albums/:id/photos', (request, response) => {
+  const id = request.params.id;
+  let result = []
+  photos.forEach(ele => {
+      if(ele.userId === +id) {
+          result.push(ele);
+      }
+  })
+  response.json(result);
 })
 
 // GET TODOS
@@ -41192,6 +41214,18 @@ app.get('/users/:id', (request, response) => {
             return;
         }
     })
+})
+
+// GET posts by id in comments
+app.get('/users/:id/todos', (request, response) => {
+  const id = request.params.id;
+  let result = []
+  todos.forEach(ele => {
+      if(ele.userId === +id) {
+          result.push(ele);
+      }
+  })
+  response.json(result);
 })
 
 // GET posts by id in comments
@@ -41297,7 +41331,7 @@ app.put('/albums/:id', (request, response) => {
 })
 
 // PUT photos
-app.put('/users/:id', (request, response) => {
+app.put('/photos/:id', (request, response) => {
   const id = request.params.id;
   const obj_mod = request.body;
   let index = photos.findIndex(ele => ele.id === +id);
@@ -41306,7 +41340,7 @@ app.put('/users/:id', (request, response) => {
 })
 
 // PUT todos
-app.put('/users/:id', (request, response) => {
+app.put('/todos/:id', (request, response) => {
   const id = request.params.id;
   const obj_mod = request.body;
   let index = todos.findIndex(ele => ele.id === +id);
