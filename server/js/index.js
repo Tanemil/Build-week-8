@@ -40852,7 +40852,7 @@ let users = [
         "catchPhrase": "Multi-layered client-server neural-net",
         "bs": "harness real-time e-markets"
       },
-      "image": "https://picsum.photos/400/200?random=1"
+      "image": "https://picsum.photos/1920/1080?random=1"
     },
     {
       "id": 2,
@@ -40876,7 +40876,7 @@ let users = [
         "catchPhrase": "Proactive didactic contingency",
         "bs": "synergize scalable supply-chains"
       },
-      "image": "https://picsum.photos/400/200?random=2"
+      "image": "https://picsum.photos/1920/1080?random=2"
     },
     {
       "id": 3,
@@ -40900,7 +40900,7 @@ let users = [
         "catchPhrase": "Face to face bifurcated interface",
         "bs": "e-enable strategic applications"
       },
-      "image": "https://picsum.photos/400/200?random=3"
+      "image": "https://picsum.photos/1920/1080?random=3"
     },
     {
       "id": 4,
@@ -40924,7 +40924,7 @@ let users = [
         "catchPhrase": "Multi-tiered zero tolerance productivity",
         "bs": "transition cutting-edge web services"
       },
-      "image": "https://picsum.photos/400/200?random=4"
+      "image": "https://picsum.photos/1920/1080?random=4"
     },
     {
       "id": 5,
@@ -40948,7 +40948,7 @@ let users = [
         "catchPhrase": "User-centric fault-tolerant solution",
         "bs": "revolutionize end-to-end systems"
       },
-      "image": "https://picsum.photos/400/200?random=5"
+      "image": "https://picsum.photos/1920/1080?random=5"
     },
     {
       "id": 6,
@@ -40972,7 +40972,7 @@ let users = [
         "catchPhrase": "Synchronised bottom-line interface",
         "bs": "e-enable innovative applications"
       },
-      "image": "https://picsum.photos/400/200?random=6"
+      "image": "https://picsum.photos/1920/1080?random=6"
     },
     {
       "id": 7,
@@ -40996,7 +40996,7 @@ let users = [
         "catchPhrase": "Configurable multimedia task-force",
         "bs": "generate enterprise e-tailers"
       },
-      "image": "https://picsum.photos/400/200?random=7"
+      "image": "https://picsum.photos/1920/1080?random=7"
     },
     {
       "id": 8,
@@ -41020,7 +41020,7 @@ let users = [
         "catchPhrase": "Implemented secondary concept",
         "bs": "e-enable extensible e-tailers"
       },
-      "image": "https://picsum.photos/400/200?random=8"
+      "image": "https://picsum.photos/1920/1080?random=8"
     },
     {
       "id": 9,
@@ -41044,7 +41044,7 @@ let users = [
         "catchPhrase": "Switchable contextually-based project",
         "bs": "aggregate real-time technologies"
       },
-      "image": "https://picsum.photos/400/200?random=9"
+      "image": "https://picsum.photos/1920/1080?random=9"
     },
     {
       "id": 10,
@@ -41068,7 +41068,7 @@ let users = [
         "catchPhrase": "Centralized empowering task-force",
         "bs": "target end-to-end models"
       },
-      "image": "https://picsum.photos/400/200?random=10"
+      "image": "https://picsum.photos/1920/1080?random=10"
     }
 ]
 
