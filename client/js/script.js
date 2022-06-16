@@ -1,5 +1,19 @@
 const section = document.querySelector('.section');
 
+//#region 
+
+var checkbox = document.querySelector('input[name=theme]');
+
+checkbox.addEventListener('change', function() {
+   if(this.checked) {
+      document.documentElement.setAttribute('select-theme', 'dark');
+   } else {
+      document.documentElement.setAttribute('select-theme', 'light');
+   }
+});
+
+//#endregion
+
 //#region  ---------- Generazione Cards all'avvio ------------
 
 fetch('http://localhost:3000/users')
@@ -30,14 +44,15 @@ fetch('http://localhost:3000/users')
         /* --------- Contenitore Card ---------- */
 
         let cardCont = document.createElement('div');
-        cardCont.className = 'cardCont';
+        cardCont.className = 'container cardCont';
         section.appendChild(cardCont);
         
         /* -------------- Users div ---------------- */
 
         let usersDiv = document.createElement('div');
         usersDiv.className = 'usersDiv';
-        usersDiv.innerHTML = `${ele.name}${'<br>'}${ele.email}${'<br>'}${ele.phone}${'<br>'}${ele.website}${'<br>'}${ele.address.street}${'<br>'}${ele.address.city}${'<br>'}`
+        usersDiv.innerHTML = `${'<span id="user_name">'+ele.name+'</span>'}${'<span>'+ele.email+'</span>'}${'<span>'+ele.phone+'</span>'}
+                              ${'<span>'+ele.website+'</span>'}${'<span>'+ele.address.street+'</span>'}${'<span>'+ele.address.city+'</span>'}`
         section.appendChild(usersDiv);
 
         /* -------------- Buttons div ---------------- */
@@ -55,9 +70,6 @@ fetch('http://localhost:3000/users')
         btnToDo.innerText = 'todolist';
         btnDiv.appendChild(btnToDo);
 
-
-
-
         /* -------------- Image div ---------------- */
 
         let imgDiv = document.createElement('div');
@@ -65,12 +77,8 @@ fetch('http://localhost:3000/users')
         imgDiv.className = 'imgDiv';
         img.src = ele.image
         imgDiv.appendChild(img)
-        
-        /* imgDiv.innerHTML = '<img src=" '+ ele.profileURL +' ">'; */ // ID DA SOSTITUIRE! creo tag img nell'html e compilo con id json dell'img
         section.appendChild(imgDiv);
         
-
-
         /* ----- Comments/Album/ToDoList Display ----- */
 
         let displayDiv = document.createElement('div');
@@ -272,27 +280,7 @@ fetch('http://localhost:3000/users')
         cardCont.appendChild(displayDiv);
         cardCont.appendChild(arrowsDiv);
 
-
-/*         let nameP = document.createElement('p');                // creo p per ogni elemento da inserire
-        nameP.innerHTML = `${'<b>Name:</b>'} ${ele.firstName}`; // accedo agli elementi cont nel json
-        info.appendChild(nameP);
-
-        let surnameP = document.createElement('p');
-        surnameP.innerHTML = `${'<b>Last Name:</b>'} ${ele.lastName}`;
-        info.appendChild(surnameP); */
-
     });
 })
 
 //#endregion
-/* 
-users[
-    post[
-        commenti
-    ]
-    album[
-        photos
-    ]
-    todos
-]
- */
