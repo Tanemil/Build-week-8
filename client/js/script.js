@@ -288,18 +288,24 @@ function genera_cards(){
 
 genera_cards()
 
-document.querySelector('.bottone_ricerca').addEventListener('click', ()=>{
-    console.log(document.querySelector('.bottone_ricerca'),document.querySelector('.input_ricerca').value)
-    genera_cards_con_input((document.querySelector('.input_ricerca').value))
+console.log(document.querySelectorAll('.bottone_ricerca')[0])
+
+document.querySelectorAll('.bottone_ricerca')[0].addEventListener('click', ()=>{
+    console.log(document.querySelectorAll('.input_ricerca')[0].value)
+    genera_cards_con_input((document.querySelectorAll('.input_ricerca')[0].value))
 })
 
 function genera_cards_con_input(input){
-    section.children = []
+
+    section.querySelectorAll('.cardCont').forEach((figlio)=>{
+        figlio.remove()
+    })
+    
+
     fetch('http://localhost:3000/users')
     .then(res => res.json())    // json parse per trasformare i dati dal json
     .then(function(data) {      // data contiene i dati fetchati dal json
         data.forEach((ele , index) => { // ele riporta tutti gli array presenti nella source. Per ognuno, crea div e lo popola con i dettagli (primo array, poi secondo)
-            console.log(ele.name , input)
             if (ele.name.includes(input)){
                 /* card{
                     div.users{
