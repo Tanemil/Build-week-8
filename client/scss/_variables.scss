@@ -1,0 +1,144 @@
+@mixin make-container($padding-x: $container-padding-x) {
+    width: 50%;
+    padding-right: $padding-x;
+    padding-left: $padding-x;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 15px;
+
+}
+
+@mixin light-prop {
+
+    body {
+        background-color: #dae0e6;
+        color: #000;
+
+        /* ---- Navbar Section ---- */
+
+        /* ---- Cards Section ---- */
+        .cardCont {
+            background-color: #fff;
+        }
+        .usersDiv {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .usersDiv>span {
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+        span#user_name {
+            font-size: 1em;
+            font-weight: bold;
+        }
+        .imgDiv {
+            margin-bottom: 10px;
+        }
+        .imgDiv img {
+            width: 100%;
+        }
+        .btnDiv {
+            margin-bottom: 10px;
+        }
+        .btnDiv button {
+            margin-right: 10px;
+        }
+        .btnComments {
+            margin-bottom: 15px;
+        }
+        .displayDiv p br {
+            display: none;
+        }
+        .postsDiv {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+        }
+        .postsDiv h2 {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .postsDiv p {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        input[id=switch] {
+            height: 0;
+            width: 0;
+            visibility: hidden;
+        }
+        label {
+            cursor: pointer;
+            width: 55px;
+            height: 25px;
+            background: grey;
+            margin: 0 auto;
+            border-radius: 100px;
+            position: relative;
+        }
+        label:after {
+        content: '';
+            background: rgb(0, 0, 0);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 5px;
+            transition: cubic-bezier(.17,.67,.83,.67) 200ms;
+        }
+        input:checked + label {
+            background: white;
+        }
+        input:checked + label:after {
+            left: calc(100% - 5px);
+            transform: translateX(-100%);
+        }
+        .button {
+            background: none !important;
+            color: grey !important;
+            font-size: 1em !important;
+            font-weight: 600 !important;
+        }
+        .button h6 {
+            margin-top: 8px;
+            margin-right: 10px;
+        }
+
+        /* ---- Footer Section ---- */
+        
+    }
+}
+
+@mixin dark-prop {
+
+    body {
+        background-color: #030303;
+        color: #dae0e6;
+
+        /* ---- Navbar Section ---- */
+
+        /* ---- Cards Section ---- */
+        .cardCont {
+            background-color: #fff;
+        }
+
+        /* ---- Footer Section ---- */
+    }
+}
+
+@mixin theme-colors($light-theme: true) {
+    @if $light-theme { /* = true */
+      @include light-prop;
+  
+    } @else { /* dark theme */
+      @include dark-prop;
+    }
+}

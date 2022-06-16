@@ -1,9 +1,27 @@
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import 'variables';
 
-.no-show{
+/* --- Valori iniziali light theme --- */
+@include light-prop;
+
+.container {
+    @include make-container();
+}
+
+/* ---- Classe Show/No-show ---- */
+.no-show {
     display: none;
 }
-
-.show{
+.show {
     display: initial;
 }
+
+
+/* ---- Toggle btn Light/Dark Theme ---- */
+html[select-theme='light'] {
+    @include theme-colors($light-theme: true);
+}
+html[select-theme='dark'] {
+    @include theme-colors($light-theme: false);
+}
+

@@ -11957,11 +11957,301 @@ fieldset:disabled .btn {
   }
 }
 
+/* --- Valori iniziali light theme --- */
+body {
+  background-color: #dae0e6;
+  color: #000;
+  /* ---- Navbar Section ---- */
+  /* ---- Cards Section ---- */
+  /* ---- Footer Section ---- */
+}
+
+body .cardCont {
+  background-color: #fff;
+}
+
+body .usersDiv {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+body .usersDiv > span {
+  font-size: 0.8em;
+  margin-right: 5px;
+}
+
+body span#user_name {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+body .imgDiv {
+  margin-bottom: 10px;
+}
+
+body .imgDiv img {
+  width: 100%;
+}
+
+body .btnDiv {
+  margin-bottom: 10px;
+}
+
+body .btnDiv button {
+  margin-right: 10px;
+}
+
+body .btnComments {
+  margin-bottom: 15px;
+}
+
+body .displayDiv p br {
+  display: none;
+}
+
+body .postsDiv {
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+}
+
+body .postsDiv h2, body .postsDiv .h2 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+body .postsDiv p {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+body input[id=switch] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+body label {
+  cursor: pointer;
+  width: 55px;
+  height: 25px;
+  background: grey;
+  margin: 0 auto;
+  border-radius: 100px;
+  position: relative;
+}
+
+body label:after {
+  content: '';
+  background: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  -webkit-transition: cubic-bezier(0.17, 0.67, 0.83, 0.67) 200ms;
+  transition: cubic-bezier(0.17, 0.67, 0.83, 0.67) 200ms;
+}
+
+body input:checked + label {
+  background: white;
+}
+
+body input:checked + label:after {
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+body .button {
+  background: none !important;
+  color: grey !important;
+  font-size: 1em !important;
+  font-weight: 600 !important;
+}
+
+body .button h6, body .button .h6 {
+  margin-top: 8px;
+  margin-right: 10px;
+}
+
+.container {
+  width: 50%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* ---- Classe Show/No-show ---- */
 .no-show {
   display: none;
 }
 
 .show {
   display: initial;
+}
+
+/* ---- Toggle btn Light/Dark Theme ---- */
+html[select-theme='light'] {
+  /* = true */
+}
+
+html[select-theme='light'] body {
+  background-color: #dae0e6;
+  color: #000;
+  /* ---- Navbar Section ---- */
+  /* ---- Cards Section ---- */
+  /* ---- Footer Section ---- */
+}
+
+html[select-theme='light'] body .cardCont {
+  background-color: #fff;
+}
+
+html[select-theme='light'] body .usersDiv {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+html[select-theme='light'] body .usersDiv > span {
+  font-size: 0.8em;
+  margin-right: 5px;
+}
+
+html[select-theme='light'] body span#user_name {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+html[select-theme='light'] body .imgDiv {
+  margin-bottom: 10px;
+}
+
+html[select-theme='light'] body .imgDiv img {
+  width: 100%;
+}
+
+html[select-theme='light'] body .btnDiv {
+  margin-bottom: 10px;
+}
+
+html[select-theme='light'] body .btnDiv button {
+  margin-right: 10px;
+}
+
+html[select-theme='light'] body .btnComments {
+  margin-bottom: 15px;
+}
+
+html[select-theme='light'] body .displayDiv p br {
+  display: none;
+}
+
+html[select-theme='light'] body .postsDiv {
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+}
+
+html[select-theme='light'] body .postsDiv h2, html[select-theme='light'] body .postsDiv .h2 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+html[select-theme='light'] body .postsDiv p {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+html[select-theme='light'] body input[id=switch] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+html[select-theme='light'] body label {
+  cursor: pointer;
+  width: 55px;
+  height: 25px;
+  background: grey;
+  margin: 0 auto;
+  border-radius: 100px;
+  position: relative;
+}
+
+html[select-theme='light'] body label:after {
+  content: '';
+  background: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  -webkit-transition: cubic-bezier(0.17, 0.67, 0.83, 0.67) 200ms;
+  transition: cubic-bezier(0.17, 0.67, 0.83, 0.67) 200ms;
+}
+
+html[select-theme='light'] body input:checked + label {
+  background: white;
+}
+
+html[select-theme='light'] body input:checked + label:after {
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+html[select-theme='light'] body .button {
+  background: none !important;
+  color: grey !important;
+  font-size: 1em !important;
+  font-weight: 600 !important;
+}
+
+html[select-theme='light'] body .button h6, html[select-theme='light'] body .button .h6 {
+  margin-top: 8px;
+  margin-right: 10px;
+}
+
+html[select-theme='dark'] {
+  /* dark theme */
+}
+
+html[select-theme='dark'] body {
+  background-color: #030303;
+  color: #dae0e6;
+  /* ---- Navbar Section ---- */
+  /* ---- Cards Section ---- */
+  /* ---- Footer Section ---- */
+}
+
+html[select-theme='dark'] body .cardCont {
+  background-color: #fff;
 }
 /*# sourceMappingURL=style.css.map */

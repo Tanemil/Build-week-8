@@ -40852,7 +40852,7 @@ let users = [
         "catchPhrase": "Multi-layered client-server neural-net",
         "bs": "harness real-time e-markets"
       },
-      "image": "https://picsum.photos/400/200?random=1"
+      "image": "https://picsum.photos/1920/1080?random=1"
     },
     {
       "id": 2,
@@ -40876,7 +40876,7 @@ let users = [
         "catchPhrase": "Proactive didactic contingency",
         "bs": "synergize scalable supply-chains"
       },
-      "image": "https://picsum.photos/400/200?random=2"
+      "image": "https://picsum.photos/1920/1080?random=2"
     },
     {
       "id": 3,
@@ -40900,7 +40900,7 @@ let users = [
         "catchPhrase": "Face to face bifurcated interface",
         "bs": "e-enable strategic applications"
       },
-      "image": "https://picsum.photos/400/200?random=3"
+      "image": "https://picsum.photos/1920/1080?random=3"
     },
     {
       "id": 4,
@@ -40924,7 +40924,7 @@ let users = [
         "catchPhrase": "Multi-tiered zero tolerance productivity",
         "bs": "transition cutting-edge web services"
       },
-      "image": "https://picsum.photos/400/200?random=4"
+      "image": "https://picsum.photos/1920/1080?random=4"
     },
     {
       "id": 5,
@@ -40948,7 +40948,7 @@ let users = [
         "catchPhrase": "User-centric fault-tolerant solution",
         "bs": "revolutionize end-to-end systems"
       },
-      "image": "https://picsum.photos/400/200?random=5"
+      "image": "https://picsum.photos/1920/1080?random=5"
     },
     {
       "id": 6,
@@ -40972,7 +40972,7 @@ let users = [
         "catchPhrase": "Synchronised bottom-line interface",
         "bs": "e-enable innovative applications"
       },
-      "image": "https://picsum.photos/400/200?random=6"
+      "image": "https://picsum.photos/1920/1080?random=6"
     },
     {
       "id": 7,
@@ -40996,7 +40996,7 @@ let users = [
         "catchPhrase": "Configurable multimedia task-force",
         "bs": "generate enterprise e-tailers"
       },
-      "image": "https://picsum.photos/400/200?random=7"
+      "image": "https://picsum.photos/1920/1080?random=7"
     },
     {
       "id": 8,
@@ -41020,7 +41020,7 @@ let users = [
         "catchPhrase": "Implemented secondary concept",
         "bs": "e-enable extensible e-tailers"
       },
-      "image": "https://picsum.photos/400/200?random=8"
+      "image": "https://picsum.photos/1920/1080?random=8"
     },
     {
       "id": 9,
@@ -41044,7 +41044,7 @@ let users = [
         "catchPhrase": "Switchable contextually-based project",
         "bs": "aggregate real-time technologies"
       },
-      "image": "https://picsum.photos/400/200?random=9"
+      "image": "https://picsum.photos/1920/1080?random=9"
     },
     {
       "id": 10,
@@ -41068,11 +41068,9 @@ let users = [
         "catchPhrase": "Centralized empowering task-force",
         "bs": "target end-to-end models"
       },
-      "image": "https://picsum.photos/400/200?random=10"
+      "image": "https://picsum.photos/1920/1080?random=10"
     }
 ]
-
-console.log(users[0].image,users[1].image)
 
 // GET POSTS
 app.get('/posts', (request, response) => {
@@ -41134,6 +41132,18 @@ app.get('/albums/:id', (request, response) => {
     })
 })
 
+// GET albums by id in users
+app.get('/users/:id/albums', (request, response) => {
+  const id = request.params.id;
+  let result = []
+  albums.forEach(ele => {
+      if(ele.userId === +id) {
+          result.push(ele);
+      }
+  })
+  response.json(result);
+})
+
 // GET photos by id in albums
 app.get('/albums/:id/photos', (request, response) => {
     const id = request.params.id;
@@ -41160,6 +41170,18 @@ app.get('/photos/:id', (request, response) => {
             return;
         }
     })
+})
+
+// GET photos by id in albums
+app.get('/albums/:id/photos', (request, response) => {
+  const id = request.params.id;
+  let result = []
+  photos.forEach(ele => {
+      if(ele.userId === +id) {
+          result.push(ele);
+      }
+  })
+  response.json(result);
 })
 
 // GET TODOS
@@ -41192,6 +41214,18 @@ app.get('/users/:id', (request, response) => {
             return;
         }
     })
+})
+
+// GET posts by id in comments
+app.get('/users/:id/todos', (request, response) => {
+  const id = request.params.id;
+  let result = []
+  todos.forEach(ele => {
+      if(ele.userId === +id) {
+          result.push(ele);
+      }
+  })
+  response.json(result);
 })
 
 // GET posts by id in comments
@@ -41297,7 +41331,7 @@ app.put('/albums/:id', (request, response) => {
 })
 
 // PUT photos
-app.put('/users/:id', (request, response) => {
+app.put('/photos/:id', (request, response) => {
   const id = request.params.id;
   const obj_mod = request.body;
   let index = photos.findIndex(ele => ele.id === +id);
@@ -41306,7 +41340,7 @@ app.put('/users/:id', (request, response) => {
 })
 
 // PUT todos
-app.put('/users/:id', (request, response) => {
+app.put('/todos/:id', (request, response) => {
   const id = request.params.id;
   const obj_mod = request.body;
   let index = todos.findIndex(ele => ele.id === +id);
