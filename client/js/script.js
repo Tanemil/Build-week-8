@@ -139,6 +139,126 @@ fetch('http://localhost:3000/users')
             })     // data contiene i dati fetchati dal json
         })
         btnDiv.appendChild(btnPosts);
+
+        /* -------------- Todos ----------------- */
+
+        btnToDo.addEventListener('click',()=>{
+            displayDiv.innerHTML = ''
+            if (document.getElementsByClassName('displayDiv')[index].classList.contains('show')){
+                document.getElementsByClassName('displayDiv')[index].classList.add('no-show')
+                document.getElementsByClassName('displayDiv')[index].classList.remove('show')
+            }else{
+                document.getElementsByClassName('displayDiv')[index].classList.add('show') 
+                document.getElementsByClassName('displayDiv')[index].classList.remove('no-show')
+            }
+
+            fetch('http://localhost:3000/users/'+(index+1)+'/todos')
+            .then(res => res.json())    // json parse per trasformare i dati dal json
+            .then(function(todos) {
+
+                todos.forEach((ele_todos, todos_index)=>{
+                    let div_todos = document.createElement('div')
+                    let todos_title = document.createElement('h3')
+                    todos_title.className = 'd-inline'
+                    let checkbox = document.createElement('input')
+                    checkbox.type = 'checkbox'
+                    checkbox.checked = ele_todos.completed
+                    checkbox.className = 'd-inline'
+                    checkbox.addEventListener('change',()=>{
+                        if (checkbox.checked){
+                            fetch('http://localhost:3000/todos/'+(todos_index+1), {
+                                method: 'PUT',
+                                body: JSON.stringify({
+                                    userId: index+1,
+                                    id: todos_index+1,
+                                    title: ele_todos.title,
+                                    completed: true
+                                }),
+                                headers: {
+                                    'Content-type': 'application/json',
+                                },
+                                })
+                                .then((response) => response.json())
+                                .then((json) => console.log(json));
+                        }else{
+                            fetch('http://localhost:3000/todos/'+(todos_index+1), {
+                                method: 'PUT',
+                                body: JSON.stringify({
+                                    userId: index+1,
+                                    id: todos_index+1,
+                                    title: ele_todos.title,
+                                    completed: false
+                                }),
+                                headers: {
+                                    'Content-type': 'application/json',
+                                },
+                                })
+                                .then((response) => response.json())
+                                .then((json) => console.log(json));
+                        }
+                    })
+                    todos_title.innerText = ele_todos.title
+                    div_todos.appendChild(todos_title)
+                    div_todos.appendChild(checkbox)
+                    displayDiv.appendChild(div_todos)
+                })
+            })
+        })
+
+        /* -------------- Albums ----------------- */
+
+        btnAlbum.addEventListener('click',()=>{
+            displayDiv.innerHTML = ''
+            if (document.getElementsByClassName('displayDiv')[index].classList.contains('show')){
+                document.getElementsByClassName('displayDiv')[index].classList.add('no-show')
+                document.getElementsByClassName('displayDiv')[index].classList.remove('show')
+            }else{
+                document.getElementsByClassName('displayDiv')[index].classList.add('show') 
+                document.getElementsByClassName('displayDiv')[index].classList.remove('no-show')
+            }
+
+            fetch('http://localhost:3000/users/'+(index+1)+'/albums')
+            .then(res => res.json())    // json parse per trasformare i dati dal json
+            .then(function(albums) {
+                albums.forEach((album_element , album_index)=>{
+                    let container_albums = document.createElement('div')
+                    let container_photos = document.createElement('div')
+                    let title_album = document.createElement('h3')
+                    let button_album = document.createElement('div');
+                    container_photos.className = 'div_photos'
+                    button_album.innerHTML = '<button class="btn btn-dark" type="button">photos</button>' 
+                    title_album.innerText = album_element.title
+                    container_albums.appendChild(title_album)
+                    container_albums.appendChild(button_album)
+                    displayDiv.appendChild(container_albums)
+                    displayDiv.appendChild(container_photos)
+
+                    button_album.addEventListener('click',()=>{
+                        container_photos.innerHTML = ''
+                        console.log(document.getElementsByClassName('displayDiv')[index].getElementsByClassName('div_photos')[album_index])
+                        if (document.getElementsByClassName('displayDiv')[index].getElementsByClassName('div_photos')[album_index].classList.contains('show')){
+                            document.getElementsByClassName('displayDiv')[index].getElementsByClassName('div_photos')[album_index].classList.add('no-show')
+                            document.getElementsByClassName('displayDiv')[index].getElementsByClassName('div_photos')[album_index].classList.remove('show')
+                        }else{
+                            document.getElementsByClassName('displayDiv')[index].getElementsByClassName('div_photos')[album_index].classList.add('show') 
+                            document.getElementsByClassName('displayDiv')[index].getElementsByClassName('div_photos')[album_index].classList.remove('no-show')
+                        }
+                        fetch('http://localhost:3000/albums/'+(album_index+1+index)+'/photos')
+                        .then(res => res.json())    // json parse per trasformare i dati dal json
+                        .then(function(photos) {
+                            photos.forEach((photo)=>{
+                                let photo_img = document.createElement('img')
+                                photo_img.src = photo.url
+                                container_photos.appendChild(photo_img)
+                            })
+                        })
+                    })
+                })
+
+            })
+        })
+
+
         /* -------------- Arrows Div ----------------- */
 
         let arrowsDiv = document.createElement('div');
