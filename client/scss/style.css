@@ -12026,7 +12026,7 @@ body .postsDiv p {
   text-align: left;
 }
 
-body input[type=checkbox] {
+body input[id=switch] {
   height: 0;
   width: 0;
   visibility: hidden;
@@ -12176,7 +12176,7 @@ html[select-theme='light'] body .postsDiv p {
   text-align: left;
 }
 
-html[select-theme='light'] body input[type=checkbox] {
+html[select-theme='light'] body input[id=switch] {
   height: 0;
   width: 0;
   visibility: hidden;

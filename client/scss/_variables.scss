@@ -48,7 +48,9 @@
             margin-right: 10px;
         }
 
+        .displayDiv {
 
+        }
         .displayDiv p br {
             display: none;
         }
@@ -66,7 +68,7 @@
             text-align: left;
         }
 
-        input[type=checkbox] {
+        input[id=switch] {
             height: 0;
             width: 0;
             visibility: hidden;
