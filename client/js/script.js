@@ -37,7 +37,7 @@ fetch('http://localhost:3000/users')
 
         let usersDiv = document.createElement('div');
         usersDiv.className = 'usersDiv';
-        usersDiv.innerHTML = `${ele.name}${'<br>'}${ele.email}${'<br>'}${ele.phone}${'<br>'}${ele.website}${'<br>'}${ele.address.street}${'<br>'}${ele.address.city}${'<br>'}`
+        usersDiv.innerHTML = `${ele.name}${ele.email}${ele.phone}${ele.website}${ele.address.street}${ele.address.city}`
         section.appendChild(usersDiv);
 
         /* -------------- Buttons div ---------------- */
