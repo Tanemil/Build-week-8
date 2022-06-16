@@ -11976,13 +11976,15 @@ body .usersDiv {
 }
 
 body .usersDiv > span {
-  font-size: 0.8em;
+  font-size: 0.7em;
   margin-right: 5px;
+  color: #9a9a9a;
 }
 
 body span#user_name {
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: bold;
+  color: #000;
 }
 
 body .imgDiv {
@@ -12084,7 +12086,7 @@ body .button h6, body .button .h6 {
 }
 
 .container {
-  width: 50%;
+  width: 60%;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
   margin-right: auto;
@@ -12132,13 +12134,15 @@ html[select-theme='light'] body .usersDiv {
 }
 
 html[select-theme='light'] body .usersDiv > span {
-  font-size: 0.8em;
+  font-size: 0.7em;
   margin-right: 5px;
+  color: #9a9a9a;
 }
 
 html[select-theme='light'] body span#user_name {
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: bold;
+  color: #000;
 }
 
 html[select-theme='light'] body .imgDiv {
