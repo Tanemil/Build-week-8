@@ -11972,6 +11972,73 @@ body .navbar {
       flex-wrap: nowrap;
 }
 
+body .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: none !important;
+  color: grey !important;
+  font-size: 1em !important;
+  font-weight: 600 !important;
+}
+
+body p#sun {
+  font-size: 1.1em;
+  margin-right: 5px;
+}
+
+body p#moon {
+  visibility: hidden;
+  font-size: 1.1em;
+  margin-right: 5px;
+}
+
+body input[id=switch] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+body label[for=switch] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  cursor: pointer;
+  width: 55px;
+  height: 25px;
+  background: lightgrey;
+  margin: 0 auto;
+  border-radius: 100px;
+  position: relative;
+}
+
+body label[for=switch]:after {
+  content: '';
+  background: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  -webkit-transition: cubic-bezier(0.17, 0.67, 0.83, 0.67) 200ms;
+  transition: cubic-bezier(0.17, 0.67, 0.83, 0.67) 200ms;
+}
+
+body input:checked + label[for=switch] {
+  background: #434343;
+}
+
+body input:checked + label[for=switch]:after {
+  background: lightgrey;
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
 body .cardCont {
   background-color: #fff;
 }
@@ -12036,55 +12103,16 @@ body .div_photos img {
   width: 100%;
 }
 
-body input[type=checkbox] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
+body div#back {
+  background: none;
 }
 
-body label {
-  cursor: pointer;
-  width: 55px;
-  height: 25px;
-  background: grey;
-  margin: 0 auto;
-  border-radius: 100px;
-  position: relative;
+body footer a {
+  color: white;
 }
 
-body label:after {
-  content: '';
-  background: red;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: absolute;
-  top: 3px;
-  left: 5px;
-  -webkit-transition: cubic-bezier(0.17, 0.67, 0.83, 0.67) 200ms;
-  transition: cubic-bezier(0.17, 0.67, 0.83, 0.67) 200ms;
-}
-
-body input:checked + label {
-  background: white;
-}
-
-body input:checked + label:after {
-  left: calc(100% - 5px);
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-}
-
-body .button {
-  background: none !important;
-  color: grey !important;
-  font-size: 1em !important;
-  font-weight: 600 !important;
-}
-
-body .button h6, body .button .h6 {
-  margin-top: 8px;
-  margin-right: 10px;
+body a#back_to_top {
+  text-decoration: none;
 }
 
 .container {
@@ -12129,6 +12157,73 @@ html[select-theme='light'] body {
 html[select-theme='light'] body .navbar {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+}
+
+html[select-theme='light'] body .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: none !important;
+  color: grey !important;
+  font-size: 1em !important;
+  font-weight: 600 !important;
+}
+
+html[select-theme='light'] body p#sun {
+  font-size: 1.1em;
+  margin-right: 5px;
+}
+
+html[select-theme='light'] body p#moon {
+  visibility: hidden;
+  font-size: 1.1em;
+  margin-right: 5px;
+}
+
+html[select-theme='light'] body input[id=switch] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+html[select-theme='light'] body label[for=switch] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  cursor: pointer;
+  width: 55px;
+  height: 25px;
+  background: lightgrey;
+  margin: 0 auto;
+  border-radius: 100px;
+  position: relative;
+}
+
+html[select-theme='light'] body label[for=switch]:after {
+  content: '';
+  background: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  -webkit-transition: cubic-bezier(0.17, 0.67, 0.83, 0.67) 200ms;
+  transition: cubic-bezier(0.17, 0.67, 0.83, 0.67) 200ms;
+}
+
+html[select-theme='light'] body input:checked + label[for=switch] {
+  background: #434343;
+}
+
+html[select-theme='light'] body input:checked + label[for=switch]:after {
+  background: lightgrey;
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 
 html[select-theme='light'] body .cardCont {
@@ -12195,55 +12290,16 @@ html[select-theme='light'] body .div_photos img {
   width: 100%;
 }
 
-html[select-theme='light'] body input[type=checkbox] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
+html[select-theme='light'] body div#back {
+  background: none;
 }
 
-html[select-theme='light'] body label {
-  cursor: pointer;
-  width: 55px;
-  height: 25px;
-  background: grey;
-  margin: 0 auto;
-  border-radius: 100px;
-  position: relative;
+html[select-theme='light'] body footer a {
+  color: white;
 }
 
-html[select-theme='light'] body label:after {
-  content: '';
-  background: red;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: absolute;
-  top: 3px;
-  left: 5px;
-  -webkit-transition: cubic-bezier(0.17, 0.67, 0.83, 0.67) 200ms;
-  transition: cubic-bezier(0.17, 0.67, 0.83, 0.67) 200ms;
-}
-
-html[select-theme='light'] body input:checked + label {
-  background: white;
-}
-
-html[select-theme='light'] body input:checked + label:after {
-  left: calc(100% - 5px);
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-}
-
-html[select-theme='light'] body .button {
-  background: none !important;
-  color: grey !important;
-  font-size: 1em !important;
-  font-weight: 600 !important;
-}
-
-html[select-theme='light'] body .button h6, html[select-theme='light'] body .button .h6 {
-  margin-top: 8px;
-  margin-right: 10px;
+html[select-theme='light'] body a#back_to_top {
+  text-decoration: none;
 }
 
 html[select-theme='dark'] {
@@ -12253,12 +12309,15 @@ html[select-theme='dark'] {
 html[select-theme='dark'] body {
   background-color: #030303;
   color: #dae0e6;
-  /* ---- Navbar Section ---- */
   /* ---- Cards Section ---- */
   /* ---- Footer Section ---- */
 }
 
 html[select-theme='dark'] body .cardCont {
-  background-color: #fff;
+  background-color: #1a1a1b;
+}
+
+html[select-theme='dark'] body footer a {
+  color: #dae0e6;
 }
 /*# sourceMappingURL=style.css.map */

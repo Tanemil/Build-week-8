@@ -1,16 +1,27 @@
-
-
 const section = document.querySelector('.section');
+const sunImg = document.querySelector('p#sun');
+const moonImg = document.querySelector('p#moon');
 
 //#region 
 
 var btnCheckbox = document.querySelector('input[name=theme]');
 
 btnCheckbox.addEventListener('change', function() {
-   if(this.checked) {
-      document.documentElement.setAttribute('select-theme', 'dark');
+    if(this.checked) {
+        document.documentElement.setAttribute('select-theme', 'dark');
+        /* icona btn tema */
+        sunImg.style.visibility = 'hidden';
+        moonImg.style.visibility = 'visible';
+        /* cambio classe in bg-dark */
+        document.querySelector('body > nav').className = 'navbar bg-dark';
+       
    } else {
-      document.documentElement.setAttribute('select-theme', 'light');
+        document.documentElement.setAttribute('select-theme', 'light');
+        /* icona btn tema */
+        moonImg.style.visibility = 'hidden';
+        sunImg.style.visibility = 'visible';
+        /* cambio classe in bg-light */
+        document.querySelector('body > nav').className = 'navbar bg-light';
    }
 });
 

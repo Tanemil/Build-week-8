@@ -21,6 +21,57 @@
         .navbar {
             flex-wrap: nowrap;
         }
+        .button {
+            display: flex;
+            background: none !important;
+            color: grey !important;
+            font-size: 1em !important;
+            font-weight: 600 !important;
+        }
+        p#sun {
+            font-size: 1.1em;
+            margin-right: 5px;
+        }
+        p#moon {
+            visibility: hidden;
+            font-size: 1.1em;
+            margin-right: 5px;
+        }
+        input[id=switch] {
+            height: 0;
+            width: 0;
+            visibility: hidden;
+        }
+        label[for=switch] {
+            display: flex;
+            justify-content: flex-end;
+            cursor: pointer;
+            width: 55px;
+            height: 25px;
+            background: lightgrey;
+            margin: 0 auto;
+            border-radius: 100px;
+            position: relative;
+        }
+        label[for=switch]:after {
+        content: '';
+            background: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 5px;
+            transition: cubic-bezier(.17,.67,.83,.67) 200ms;
+        }
+        input:checked + label[for=switch] {
+            background: rgb(67, 67, 67);
+        }
+        input:checked + label[for=switch]:after {
+            background: lightgrey;
+            left: calc(100% - 5px);
+            transform: translateX(-100%);
+        }
         /* ---- Cards Section ---- */
         .cardCont {
             background-color: #fff;
@@ -49,8 +100,6 @@
         .btnDiv button {
             margin-right: 10px;
         }
-
-
         .displayDiv p br {
             display: none;
         }
@@ -72,51 +121,16 @@
             width: 100%;
         }
 
-        input[type=checkbox] {
-            height: 0;
-            width: 0;
-            visibility: hidden;
-        }
-        label {
-            cursor: pointer;
-            width: 55px;
-            height: 25px;
-            background: grey;
-            margin: 0 auto;
-            border-radius: 100px;
-            position: relative;
-        }
-        label:after {
-        content: '';
-            background: red;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            position: absolute;
-            top: 3px;
-            left: 5px;
-            transition: cubic-bezier(.17,.67,.83,.67) 200ms;
-        }
-        input:checked + label {
-            background: white;
-        }
-        input:checked + label:after {
-            left: calc(100% - 5px);
-            transform: translateX(-100%);
-        }
-        .button {
-            background: none !important;
-            color: grey !important;
-            font-size: 1em !important;
-            font-weight: 600 !important;
-        }
-        .button h6 {
-            margin-top: 8px;
-            margin-right: 10px;
-        }
-
         /* ---- Footer Section ---- */
-        
+        div#back {
+            background: none;
+        }
+        footer a {
+            color:white;
+        }
+        a#back_to_top {
+            text-decoration: none;
+        }
     }
 }
 
@@ -126,14 +140,16 @@
         background-color: #030303;
         color: #dae0e6;
 
-        /* ---- Navbar Section ---- */
 
         /* ---- Cards Section ---- */
         .cardCont {
-            background-color: #fff;
+            background-color: #1a1a1b;
         }
 
         /* ---- Footer Section ---- */
+        footer a {
+            color: #dae0e6;
+        }
     }
 }
 
