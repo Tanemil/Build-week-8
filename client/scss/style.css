@@ -12141,6 +12141,11 @@ body a#back_to_top {
   display: initial;
 }
 
+#ancor {
+  text-decoration: none;
+  color: white;
+}
+
 /* ---- Toggle btn Light/Dark Theme ---- */
 html[select-theme='light'] {
   /* = true */
