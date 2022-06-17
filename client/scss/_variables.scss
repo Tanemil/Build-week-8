@@ -1,5 +1,5 @@
 @mixin make-container($padding-x: $container-padding-x) {
-    width: 60%;
+    width: 50%;
     padding-right: $padding-x;
     padding-left: $padding-x;
     margin-right: auto;
@@ -28,14 +28,12 @@
             padding-bottom: 10px;
         }
         .usersDiv>span {
-            font-size: 0.7em;
+            font-size: 0.8em;
             margin-right: 5px;
-            color: #9a9a9a;
         }
         span#user_name {
-            font-size: 0.8em;
+            font-size: 1em;
             font-weight: bold;
-            color: #000;
         }
         .imgDiv {
             margin-bottom: 10px;
@@ -49,9 +47,8 @@
         .btnDiv button {
             margin-right: 10px;
         }
-        .btnComments {
-            margin-bottom: 15px;
-        }
+
+
         .displayDiv p br {
             display: none;
         }
@@ -64,14 +61,16 @@
         .postsDiv h2 {
             text-align: center;
             font-size: 1.5em;
-            margin-bottom: 10px;
         }
         .postsDiv p {
             text-align: left;
-            margin-bottom: 10px;
         }
 
-        input[id=switch] {
+        .div_photos img {
+            width: 100%;
+        }
+
+        input[type=checkbox] {
             height: 0;
             width: 0;
             visibility: hidden;
@@ -144,3 +143,4 @@
       @include dark-prop;
     }
 }
+
