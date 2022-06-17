@@ -19,6 +19,26 @@
             <input class="form-control me-2 input_ricerca" type="search" placeholder="Search" aria-label="Search">
             <button class="btn-dark bottone_ricerca" type="button">Cerca</button>
             <button class="btn-dark" type="button">Aggiungi</button>
+            <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Registrati</button>
+
+            <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+              <div class="offcanvas-header">
+                <h5 id="offcanvasTopLabel">Offcanvas top</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                </div>
+                <label for="basic-url" class="form-label">Adress</label>
+              </div>
+            </div>
 
           </form>
         </div>
