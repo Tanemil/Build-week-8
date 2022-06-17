@@ -12036,7 +12036,7 @@ body .div_photos img {
   width: 100%;
 }
 
-body input[type=checkbox] {
+body input#switch {
   height: 0;
   width: 0;
   visibility: hidden;
@@ -12111,6 +12111,11 @@ body .button h6, body .button .h6 {
 
 .show {
   display: initial;
+}
+
+#ancor {
+  text-decoration: none;
+  color: white;
 }
 
 /* ---- Toggle btn Light/Dark Theme ---- */
@@ -12195,7 +12200,7 @@ html[select-theme='light'] body .div_photos img {
   width: 100%;
 }
 
-html[select-theme='light'] body input[type=checkbox] {
+html[select-theme='light'] body input#switch {
   height: 0;
   width: 0;
   visibility: hidden;
