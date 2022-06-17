@@ -7,27 +7,50 @@
     <title>Build-week-8</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="client/scss/style.css">
 </head>
 <body>
-    <nav class="navbar bg-light">
+  <!--Navbar-->
+    <nav class="navbar bg-light" style = "position: sticky;">
         <div class="container-fluid">
-          <img src="img/reddit.png">
+          <img src="img/43d59e2e2fe44612b6ffbfff30602ee7 (1).png" width="100px" >
+
+          <div class="button">
+            <h6></h6>
+            <input class="container_toggle" type="checkbox" id="switch" name="theme">
+            <label for="switch"></label>
+          </div>
+
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn-primary" type="submit">Accedi</button>
-            <button class="btn-primary" type="submit">Iscriviti</button>
+
+            <input class="form-control me-2 input_ricerca" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn-dark bottone_ricerca" type="button">Cerca</button>
+            <button class="btn-dark" type="button">Aggiungi</button>
+            <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Registrati</button>
+
+            <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+              <div class="offcanvas-header">
+                <h5 id="offcanvasTopLabel">Offcanvas top</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                </div>
+                <label for="basic-url" class="form-label">Adress</label>
+              </div>
+            </div>
+
           </form>
         </div>
-      </nav>
-
-
-    <div class="button">
-      <h6>Light / Dark Theme</h6>
-      <input class="container_toggle" type="checkbox" id="switch" name="theme">
-      <label for="switch"></label>
-    </div>
-    
+      </nav>    
     <div class="section"></div>
    
     <!-- Footer -->
@@ -39,7 +62,7 @@
           <p class="d-flex justify-content-center align-items-center">
             <span class="me-3"></span>
             <button type="button" class="btn btn-outline-light btn-rounded border bg-dark">
-              Torna in cima
+              <a href="#">Torna in cima </a>
             </button>
           </p>
         </section>

@@ -18,7 +18,9 @@
         color: #000;
 
         /* ---- Navbar Section ---- */
-
+        .navbar {
+            flex-wrap: nowrap;
+        }
         /* ---- Cards Section ---- */
         .cardCont {
             background-color: #fff;
@@ -66,6 +68,10 @@
             text-align: left;
         }
 
+        .div_photos img {
+            width: 100%;
+        }
+
         input[type=checkbox] {
             height: 0;
             width: 0;
@@ -82,7 +88,7 @@
         }
         label:after {
         content: '';
-            background: rgb(0, 0, 0);
+            background: red;
             width: 20px;
             height: 20px;
             border-radius: 50%;
@@ -139,3 +145,4 @@
       @include dark-prop;
     }
 }
+

@@ -4,6 +4,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -11966,6 +11967,11 @@ body {
   /* ---- Footer Section ---- */
 }
 
+body .navbar {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
 body .cardCont {
   background-color: #fff;
 }
@@ -12026,6 +12032,10 @@ body .postsDiv p {
   text-align: left;
 }
 
+body .div_photos img {
+  width: 100%;
+}
+
 body input[type=checkbox] {
   height: 0;
   width: 0;
@@ -12044,7 +12054,7 @@ body label {
 
 body label:after {
   content: '';
-  background: black;
+  background: red;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -12116,6 +12126,11 @@ html[select-theme='light'] body {
   /* ---- Footer Section ---- */
 }
 
+html[select-theme='light'] body .navbar {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
 html[select-theme='light'] body .cardCont {
   background-color: #fff;
 }
@@ -12176,6 +12191,10 @@ html[select-theme='light'] body .postsDiv p {
   text-align: left;
 }
 
+html[select-theme='light'] body .div_photos img {
+  width: 100%;
+}
+
 html[select-theme='light'] body input[type=checkbox] {
   height: 0;
   width: 0;
@@ -12194,7 +12213,7 @@ html[select-theme='light'] body label {
 
 html[select-theme='light'] body label:after {
   content: '';
-  background: black;
+  background: red;
   width: 20px;
   height: 20px;
   border-radius: 50%;
