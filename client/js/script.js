@@ -1,3 +1,5 @@
+
+
 const section = document.querySelector('.section');
 
 //#region 
@@ -288,10 +290,7 @@ function genera_cards(){
 
 genera_cards()
 
-console.log(document.querySelectorAll('.bottone_ricerca')[0])
-
 document.querySelectorAll('.bottone_ricerca')[0].addEventListener('click', ()=>{
-    console.log(document.querySelectorAll('.input_ricerca')[0].value)
     genera_cards_con_input((document.querySelectorAll('.input_ricerca')[0].value))
 })
 
@@ -378,12 +377,12 @@ function genera_cards_con_input(input){
                 btnPosts.addEventListener('click',()=>{
                     displayDiv.innerHTML = ''
                     let num_post = index+1
-                    if (document.getElementsByClassName('displayDiv')[index].classList.contains('show')){
-                        document.getElementsByClassName('displayDiv')[index].classList.add('no-show')
-                        document.getElementsByClassName('displayDiv')[index].classList.remove('show')
+                    if (document.getElementsByClassName('displayDiv')[0].classList.contains('show')){
+                        document.getElementsByClassName('displayDiv')[0].classList.add('no-show')
+                        document.getElementsByClassName('displayDiv')[0].classList.remove('show')
                     }else{
-                        document.getElementsByClassName('displayDiv')[index].classList.add('show') 
-                        document.getElementsByClassName('displayDiv')[index].classList.remove('no-show')
+                        document.getElementsByClassName('displayDiv')[0].classList.add('show') 
+                        document.getElementsByClassName('displayDiv')[0].classList.remove('no-show')
                     }
                     fetch('http://localhost:3000/users/'+num_post+'/posts')
                     .then(res => res.json())    // json parse per trasformare i dati dal json
@@ -405,12 +404,12 @@ function genera_cards_con_input(input){
                             postsDiv.appendChild(div_commenti)
                             btnComments.addEventListener('click',()=>{
                                 div_commenti.innerHTML = ''
-                                if (document.getElementsByClassName('postsDiv')[index].getElementsByClassName('div_commenti')[ele1_index].classList.contains('show')){
-                                    document.getElementsByClassName('postsDiv')[index].getElementsByClassName('div_commenti')[ele1_index].classList.add('no-show')
-                                    document.getElementsByClassName('postsDiv')[index].getElementsByClassName('div_commenti')[ele1_index].classList.remove('show')
+                                if (document.getElementsByClassName('postsDiv')[0].getElementsByClassName('div_commenti')[ele1_index].classList.contains('show')){
+                                    document.getElementsByClassName('postsDiv')[0].getElementsByClassName('div_commenti')[ele1_index].classList.add('no-show')
+                                    document.getElementsByClassName('postsDiv')[0].getElementsByClassName('div_commenti')[ele1_index].classList.remove('show')
                                 }else{
-                                    document.getElementsByClassName('postsDiv')[index].getElementsByClassName('div_commenti')[ele1_index].classList.add('show') 
-                                    document.getElementsByClassName('postsDiv')[index].getElementsByClassName('div_commenti')[ele1_index].classList.remove('no-show')
+                                    document.getElementsByClassName('postsDiv')[0].getElementsByClassName('div_commenti')[ele1_index].classList.add('show') 
+                                    document.getElementsByClassName('postsDiv')[0].getElementsByClassName('div_commenti')[ele1_index].classList.remove('no-show')
                                 }
                                 fetch('http://localhost:3000/posts/'+(ele1_index+1+index)+'/comments')
                                 .then(res => res.json())    // json parse per trasformare i dati dal json
@@ -438,12 +437,12 @@ function genera_cards_con_input(input){
 
                 btnToDo.addEventListener('click',()=>{
                     displayDiv.innerHTML = ''
-                    if (document.getElementsByClassName('displayDiv')[index].classList.contains('show')){
-                        document.getElementsByClassName('displayDiv')[index].classList.add('no-show')
-                        document.getElementsByClassName('displayDiv')[index].classList.remove('show')
+                    if (document.getElementsByClassName('displayDiv')[0].classList.contains('show')){
+                        document.getElementsByClassName('displayDiv')[0].classList.add('no-show')
+                        document.getElementsByClassName('displayDiv')[0].classList.remove('show')
                     }else{
-                        document.getElementsByClassName('displayDiv')[index].classList.add('show') 
-                        document.getElementsByClassName('displayDiv')[index].classList.remove('no-show')
+                        document.getElementsByClassName('displayDiv')[0].classList.add('show') 
+                        document.getElementsByClassName('displayDiv')[0].classList.remove('no-show')
                     }
 
                     fetch('http://localhost:3000/users/'+(index+1)+'/todos')
@@ -502,12 +501,12 @@ function genera_cards_con_input(input){
 
                 btnAlbum.addEventListener('click',()=>{
                     displayDiv.innerHTML = ''
-                    if (document.getElementsByClassName('displayDiv')[index].classList.contains('show')){
-                        document.getElementsByClassName('displayDiv')[index].classList.add('no-show')
-                        document.getElementsByClassName('displayDiv')[index].classList.remove('show')
+                    if (document.getElementsByClassName('displayDiv')[0].classList.contains('show')){
+                        document.getElementsByClassName('displayDiv')[0].classList.add('no-show')
+                        document.getElementsByClassName('displayDiv')[0].classList.remove('show')
                     }else{
-                        document.getElementsByClassName('displayDiv')[index].classList.add('show') 
-                        document.getElementsByClassName('displayDiv')[index].classList.remove('no-show')
+                        document.getElementsByClassName('displayDiv')[0].classList.add('show') 
+                        document.getElementsByClassName('displayDiv')[0].classList.remove('no-show')
                     }
 
                     fetch('http://localhost:3000/users/'+(index+1)+'/albums')
@@ -529,12 +528,12 @@ function genera_cards_con_input(input){
                             button_album.addEventListener('click',()=>{
                                 container_photos.innerHTML = ''
                                 console.log(document.getElementsByClassName('displayDiv')[index].getElementsByClassName('div_photos')[album_index])
-                                if (document.getElementsByClassName('displayDiv')[index].getElementsByClassName('div_photos')[album_index].classList.contains('show')){
-                                    document.getElementsByClassName('displayDiv')[index].getElementsByClassName('div_photos')[album_index].classList.add('no-show')
-                                    document.getElementsByClassName('displayDiv')[index].getElementsByClassName('div_photos')[album_index].classList.remove('show')
+                                if (document.getElementsByClassName('displayDiv')[0].getElementsByClassName('div_photos')[album_index].classList.contains('show')){
+                                    document.getElementsByClassName('displayDiv')[0].getElementsByClassName('div_photos')[album_index].classList.add('no-show')
+                                    document.getElementsByClassName('displayDiv')[0].getElementsByClassName('div_photos')[album_index].classList.remove('show')
                                 }else{
-                                    document.getElementsByClassName('displayDiv')[index].getElementsByClassName('div_photos')[album_index].classList.add('show') 
-                                    document.getElementsByClassName('displayDiv')[index].getElementsByClassName('div_photos')[album_index].classList.remove('no-show')
+                                    document.getElementsByClassName('displayDiv')[0].getElementsByClassName('div_photos')[album_index].classList.add('show') 
+                                    document.getElementsByClassName('displayDiv')[0].getElementsByClassName('div_photos')[album_index].classList.remove('no-show')
                                 }
                                 fetch('http://localhost:3000/albums/'+(album_index+1+index)+'/photos')
                                 .then(res => res.json())    // json parse per trasformare i dati dal json
